@@ -8,7 +8,7 @@ set -o pipefail
 ##|    Creating directories     |
 ##\=====================================/
 mkdir -p config liquid-config
-chmod -R 755 .
+chmod -R 777 .
 
  
 ##/=====================================\
