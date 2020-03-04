@@ -7,7 +7,7 @@ services:
       local:
         ipv4_address: 10.10.0.10
     ports:
-      - ${BITCOIN_NODE_PORT}:19001
+      - 18443:19001
     volumes:
       - ./config/:/config
     restart: unless-stopped
@@ -17,7 +17,7 @@ services:
       local:
         ipv4_address: 10.10.0.11
     ports:
-      - ${LIQUID_NODE_PORT}:18884
+      - 18884:18884
       - 18886:18886
     volumes:
       - ./liquid-config/:/config
@@ -51,8 +51,8 @@ services:
     depends_on:
       - bitcoin
     ports:
-      - ${BITCOIN_ELECTRS_RPC_PORT}:60401
-      - ${BITCOIN_ELECTRS_PORT}:3002
+      - 60401:60401
+      - 3002:3002
     volumes:
       - ./config/:/config
     restart: unless-stopped
@@ -86,8 +86,8 @@ services:
     depends_on:
       - liquid
     ports:
-      - ${LIQUID_ELECTRS_RPC_PORT}:60401
-      - ${LIQUID_ELECTRS_PORT}:3002
+      - 50401:60401
+      - 3012:3002
     volumes:
       - ./liquid-config/:/config
     restart: unless-stopped
@@ -110,7 +110,7 @@ services:
     depends_on:
       - electrs
     ports:
-      - ${BITCOIN_CHOPSTICKS_PORT}:3000
+      - 3000:3000
     networks:
       local:
         ipv4_address: 10.10.0.16
@@ -135,7 +135,7 @@ services:
     depends_on:
       - electrs-liquid
     ports:
-      - ${LIQUID_CHOPSTICKS_PORT}:3000
+      - 3001:3000
     networks:
       local:
         ipv4_address: 10.10.0.17
