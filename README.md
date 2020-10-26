@@ -13,7 +13,7 @@ curl https://travis.nigiri.network | bash
 > NOTICE: You'll need to enable **docker** 
 
 
-## Example
+## Example for Travis
 
 Create a `.travis.yml` in your root folder and add the installer script in the `before_install` step
 
@@ -42,6 +42,31 @@ after_script:
   - docker-compose down
 ```
 
+## Example for Github Action
+
+```yaml
+name: Go
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  integration:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Install Nigiri
+        run: |
+          mkdir ~/.nigiri; cd ~/.nigiri
+          curl https://travis.nigiri.network | bash; cd
+          docker-compose -f ~/.nigiri/docker-compose.yml up -d
+
+
+```
 
 ## Services
 
