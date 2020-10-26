@@ -1,5 +1,5 @@
 # nigiri-travis
-Travis template for adding 🍣 [Nigiri Bitcoin](https://nigiri.vulpem.com) to your CI pipeline. 
+Travis and Github Action template for adding 🍣 [Nigiri Bitcoin](https://nigiri.vulpem.com) to your CI pipeline. 
 
 
 
@@ -42,7 +42,7 @@ after_script:
   - docker-compose down
 ```
 
-## Example for Github Action
+## NEW Example for Github Action
 
 ```yaml
 name: Nigiri pipeline
