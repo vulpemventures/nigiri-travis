@@ -45,7 +45,7 @@ after_script:
 ## Example for Github Action
 
 ```yaml
-name: Go
+name: Nigiri pipeline
 
 on:
   push:
