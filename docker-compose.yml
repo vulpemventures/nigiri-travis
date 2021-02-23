@@ -8,6 +8,7 @@ services:
         ipv4_address: 10.10.0.10
     ports:
       - 18443:19001
+      - 18442:19000
     volumes:
       - ./config/:/config
     restart: unless-stopped
@@ -17,8 +18,8 @@ services:
       local:
         ipv4_address: 10.10.0.11
     ports:
-      - 18884:18884
-      - 18886:18886
+      - 7041:18884
+      - 7040:18886
     volumes:
       - ./liquid-config/:/config
     restart: unless-stopped
@@ -51,7 +52,7 @@ services:
     depends_on:
       - bitcoin
     ports:
-      - 60401:60401
+      - 51401:60401
       - 3002:3002
     volumes:
       - ./config/:/config
@@ -86,7 +87,7 @@ services:
     depends_on:
       - liquid
     ports:
-      - 50401:60401
+      - 60401:60401
       - 3012:3002
     volumes:
       - ./liquid-config/:/config
