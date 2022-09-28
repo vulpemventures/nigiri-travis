@@ -1,3 +1,7 @@
+# Deprecation notice
+
+The only supported CI is Github Action. Please use this instead https://github.com/vulpemventures/nigiri-github-action
+
 # nigiri-travis
 Travis and Github Action template for adding 🍣 [Nigiri Bitcoin](https://nigiri.vulpem.com) to your CI pipeline. 
 
